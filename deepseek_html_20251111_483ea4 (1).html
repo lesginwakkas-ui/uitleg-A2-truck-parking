@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Truck Parking | Mobiele Website</title>
+    <meta name="description" content="Officiële A2 Truck Parking website - Perfect voor mobiel gebruik">
+    
+    <style>
+        /* Mobile First Approach */
+        :root {
+            --primary-color: #230096;
+            --primary-hover: #001ba1;
+            --primary-light: #4a3caf;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --light-text: #666666;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --border-radius: 16px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: var(--background-color); 
+            line-height: 1.6; 
+            color: var(--text-color);
+            padding: 0;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container { 
+            max-width: 100%; 
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+        
+        .logo-line1 {
+            font-size: 1.8rem;
+            display: block;
+        }
+        
+        .logo-line2 {
+            font-size: 2rem;
+            display: block;
+            margin-top: -5px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+        
+        /* Canva Section */
+        .canva-section {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 24px 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .section-text {
+            font-size: 1rem;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .canva-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary-color);
+            color: white;
+            padding: 16px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(35, 0, 150, 0.3);
+            margin: 12px 0;
+            border: none;
+            width: 100%;
+            max-width: 280px;
+        }
+        
+        .canva-button:active {
+            background: var(--primary-hover);
+            transform: translateY(2px);
+            box-shadow: 0 2px 6px rgba(35, 0, 150, 0.3);
+        }
+        
+        .link-url {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            word-break: break-all;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border: 1px solid #e9ecef;
+        }
+        
+        /* Language Buttons - BLAUW */
+        .language-section {
+            margin-bottom: 24px;
+        }
+        
+        .language-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .lang-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 18px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(35, 0, 150, 0.2);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .lang-button:active {
+            background: var(--primary-hover);
+            transform: scale(0.98);
+            border-color: var(--primary-hover);
+        }
+        
+        /* Instructions */
+        .instructions {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 0;
+            margin-top: 24px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .instruction-content {
+            padding: 24px 20px;
+        }
+        
+        .language-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .instruction-title {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin: 20px 0 12px 0;
+        }
+        
+        .step-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .step-list li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .step-list strong {
+            color: var(--primary-color);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .step-list {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+        
+        /* Bottom Spacing */
+        .bottom-spacing {
+            height: 40px;
+        }
+
+        /* Enhanced mobile interactions */
+        @media (max-width: 380px) {
+            .container {
+                padding: 16px 12px;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .logo-line1 {
+                font-size: 1.6rem;
+            }
+            
+            .logo-line2 {
+                font-size: 1.8rem;
+            }
+            
+            .canva-button, .lang-button {
+                padding: 14px 16px;
+            }
+        }
+
+        /* Tablet and larger screens */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                padding: 30px 20px;
+            }
+            
+            .language-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .canva-button:hover {
+                background: var(--primary-hover);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(35, 0, 150, 0.4);
+            }
+            
+            .lang-button:hover {
+                background: var(--primary-hover);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(35, 0, 150, 0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="logo-line1">A 2</span>
+                <span class="logo-line2">TRUCKPARKING</span>
+            </div>
+            <div class="subtitle">Selecteer uw taal voor parkeerinstructies</div>
+        </div>
+        
+        <!-- Canva Link Section -->
+        <div class="canva-section">
+            <div class="section-title">
+                <span>🎨</span> Onze Visuele Presentatie
+            </div>
+            <div class="section-text">
+                Bekijk onze complete Canva presentatie met aanvullende informatie
+            </div>
+            <a href="https://a2truck-parking.my.canva.site/" target="_blank" class="canva-button">
+                <span>📊</span> Open Canva Presentatie
+            </a>
+            <div class="link-url">
+                https://a2truck-parking.my.canva.site/
+            </div>
+        </div>
+        
+        <!-- Language Selection -->
+        <div class="language-section">
+            <div class="section-title">
+                <span>🌍</span> Kies uw taal
+            </div>
+            <div class="language-grid">
+                <a href="#" class="lang-button" data-lang="nl">🇳🇱 Nederlands</a>
+                <a href="#" class="lang-button" data-lang="en">🇬🇧 English</a>
+                <a href="#" class="lang-button" data-lang="tr">🇹🇷 Türkçe</a>
+                <a href="#" class="lang-button" data-lang="ar">🇸🇦 العربية</a>
+                <a href="#" class="lang-button" data-lang="es">🇪🇸 Español</a>
+                <a href="#" class="lang-button" data-lang="de">🇩🇪 Deutsch</a>
+                <a href="#" class="lang-button" data-lang="ru">🇷🇺 Русский</a>
+                <a href="#" class="lang-button" data-lang="pl">🇵🇱 Polski</a>
+                <a href="#" class="lang-button" data-lang="uk">🇺🇦 Українська</a>
+            </div>
+        </div>
+        
+        <!-- Instructions in different languages -->
+        <div class="instructions">
+            <!-- Dutch -->
+            <div id="nl" class="instruction-content">
+                <div class="language-title">🇳🇱 Nederlands: Hoe Werkt In- & Uitrijden?</div>
+                
+                <div class="instruction-title">In- en Uitrijden: Stap voor Stap</div>
+                <p>Het proces is ontworpen om snel, maar gecontroleerd te verlopen voor maximale veiligheid.</p>
+                
+                <div class="instruction-title">1. Binnenrijden (Aankomst)</div>
+                <ol class="step-list">
+                    <li><strong>Aankomst bij de Poort:</strong> Rijd naar de gesloten toegangspoort of slagboom.</li>
+                    <li><strong>Identificatie:</strong> Camera's scannen het kenteken (LPR) om de geldige reservering te controleren, óf voer handmatig uw reserveringscode in op de terminal.</li>
+                    <li><strong>Toegang:</strong> Na validatie geeft het systeem een parkeerkaart uit en opent de slagboom.</li>
+                    <li><strong>Parkeren:</strong> Parkeer op de toegewezen of vrij gekozen plek binnen de beveiligde zone.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Vertrekken (Uitrijden)</div>
+                <ol class="step-list">
+                    <li><strong>Voorbereiding & Betaling:</strong> Ga naar het betaalpunt (servicegebouw of poort) om de parkeerkosten te voldoen (pin, creditcard, tankpas).</li>
+                    <li><strong>Validatie:</strong> Na succesvolle betaling wordt uw parkeerkaart 'vrijgegeven' voor vertrek.</li>
+                    <li><strong>Exit Poort:</strong> Rijd naar de uitgangspoort en steek de gevalideerde kaart in de terminal.</li>
+                    <li><strong>Vertrek:</strong> De slagboom opent en u kunt het beveiligde terrein verlaten.</li>
+                </ol>
+            </div>
+            
+            <!-- English -->
+            <div id="en" class="instruction-content hidden">
+                <div class="language-title">🇬🇧 English: How Does Entry & Exit Work?</div>
+                
+                <div class="instruction-title">Entry and Exit: Step-by-Step</div>
+                <p>The process is designed to be fast yet controlled for maximum safety.</p>
+                
+                <div class="instruction-title">1. Entry (Arrival)</div>
+                <ol class="step-list">
+                    <li><strong>Arrival at the Gate:</strong> Drive to the closed entrance gate or barrier.</li>
+                    <li><strong>Identification:</strong> Cameras scan the license plate (LPR) to check the valid reservation, OR manually enter your reservation code on the terminal.</li>
+                    <li><strong>Access:</strong> After validation, the system issues a parking ticket and opens the barrier.</li>
+                    <li><strong>Parking:</strong> Park in the assigned or freely chosen spot within the secured zone.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Departure (Exit)</div>
+                <ol class="step-list">
+                    <li><strong>Preparation & Payment:</strong> Go to the payment point (service building or gate) to pay the parking fees (debit/credit card, fuel card).</li>
+                    <li><strong>Validation:</strong> After successful payment, your parking ticket is 'validated' for departure.</li>
+                    <li><strong>Exit Gate:</strong> Drive to the exit gate and insert the validated card into the terminal.</li>
+                    <li><strong>Departure:</strong> The barrier opens, and you can leave the secured area.</li>
+                </ol>
+            </div>
+            
+            <!-- Turkish -->
+            <div id="tr" class="instruction-content hidden">
+                <div class="language-title">🇹🇷 Türkçe: Giriş ve Çıkış Nasıl Çalışır?</div>
+                
+                <div class="instruction-title">Giriş ve Çıkış: Adım Adım</div>
+                <p>Süreç, maksimum güvenlik için hızlı ama kontrollü olacak şekilde tasarlanmıştır.</p>
+                
+                <div class="instruction-title">1. Giriş (Varış)</div>
+                <ol class="step-list">
+                    <li><strong>Kapıya Varış:</strong> Kapalı giriş kapısına of bariyerine doğru ilerleyin.</li>
+                    <li><strong>Kimlik Tespiti:</strong> Kameralar geçerli rezervasyonu kontrol etmek için plakayı (LPR) tarar VEYDA rezervasyon kodunuzu terminale manuel olarak girin.</li>
+                    <li><strong>Erişim:</strong> Doğrulamanın ardından sistem bir park kartı verir en bariyeri açar.</li>
+                    <li><strong>Park Etme:</strong> Güvenli bölge içindeki belirlenen of serbestçe seçilen yere park edin.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Çıkış (Ayrılış)</div>
+                <ol class="step-list">
+                    <li><strong>Hazırlık & Ödeme:</strong> Park ücretini ödemek için ödeme noktasına (servis binası veya kapı) gidin (banka/kredi kartı, yakıt kartı).</li>
+                    <li><strong>Doğrulama:</strong> Başarılı ödemeden sonra park kartınız çıkış için 'serbest bırakılır'.</li>
+                    <li><strong>Çıkış Kapısı:</strong> Çıkış kapısına ilerleyin en doğrulanan kartı terminale yerleştirin.</li>
+                    <li><strong>Ayrılış:</strong> Bariyer açılır en güvenli alanı terk edebilirsiniz.</li>
+                </ol>
+            </div>
+            
+            <!-- Arabic -->
+            <div id="ar" class="instruction-content hidden" dir="rtl">
+                <div class="language-title">🇸🇦 العربية: كيف يعمل الدخول والخروج؟</div>
+                
+                <div class="instruction-title">الدخول والخروج: خطوة بخطوة</div>
+                <p>تم تصميم العملية لتكون سريعة ولكن خاضعة للرقابة لتحقيق أقصى قدر من الأمان.</p>
+                
+                <div class="instruction-title">1. الدخول (الوصول)</div>
+                <ol class="step-list">
+                    <li><strong>الوصول إلى البوابة:</strong> اتجه نحو بوابة الدخول المغلقة أو الحاجز.</li>
+                    <li><strong>التعريف:</strong> تقوم الكاميرات بمسح لوحة الترخيص (LPR) للتحقق من الحجز الصالح، أو أدخل رمز الحجز الخاص بك يدوياً في المحطة الطرفية.</li>
+                    <li><strong>الوصول:</strong> بعد التحقق، يصدر النظام بطاقة وقوف ويفتح الحاجز.</li>
+                    <li><strong>الوقوف (الركن):</strong> اركن في المكان المخصص أو المختار بحرية داخل المنطقة الآمنة.</li>
+                </ol>
+                
+                <div class="instruction-title">2. المغادرة (الخروج)</div>
+                <ol class="step-list">
+                    <li><strong>التحضير والدفع:</strong> اذهب إلى نقطة الدفع (مبنى الخدمات أو البوابة) لدفع رسوم وقوف السيارات (بطاقة بنكية، ائتمانية، وقود).</li>
+                    <li><strong>التحقق:</strong> بعد الدفع بنجاح، يتم 'تحرير' بطاقة الوقوف الخاصة بك للمغادرة.</li>
+                    <li><strong>بوابة الخروج:</strong> اتجه نحو بوابة الخروج وأدخل البطاقة التي تم التحقق منها في المحطة الطرفية.</li>
+                    <li><strong>المغادرة:</strong> يفتح الحاجز وتستطيع مغادرة المنطقة الآمنة.</li>
+                </ol>
+            </div>
+
+            <!-- Spanish -->
+            <div id="es" class="instruction-content hidden">
+                <div class="language-title">🇪🇸 Español: ¿Cómo Funciona la Entrada y Salida?</div>
+                
+                <div class="instruction-title">Entrada y Salida: Paso a Paso</div>
+                <p>El proceso está diseñado para ser rápido pero controlado para garantizar la máxima seguridad.</p>
+                
+                <div class="instruction-title">1. Entrada (Llegada)</div>
+                <ol class="step-list">
+                    <li><strong>Llegada a la Puerta:</strong> Conduzca hasta la puerta de entrada o barrera cerrada.</li>
+                    <li><strong>Identificación:</strong> Las cámaras escanean la matrícula (LPR) para verificar la reserva válida, O introduzca manualmente su código de reserva en el terminal.</li>
+                    <li><strong>Acceso:</strong> Después de la validación, el sistema emite un ticket de estacionamiento y abre la barrera.</li>
+                    <li><strong>Estacionamiento:</strong> Estacione en el lugar asignado o elegido libremente dentro de la zona segura.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Salida (Partida)</div>
+                <ol class="step-list">
+                    <li><strong>Preparación y Pago:</strong> Diríjase al punto de pago (edificio de servicios o puerta) para pagar las tarifas (tarjeta de débito/crédito, tarjeta de combustible).</li>
+                    <li><strong>Validación:</strong> Después del pago exitoso, su ticket de estacionamiento es 'validado' para la salida.</li>
+                    <li><strong>Puerta de Salida:</strong> Conduzca hasta la puerta de salida e inserte el ticket validado en el terminal.</li>
+                    <li><strong>Partida:</strong> La barrera se abre y puede abandonar la zona segura.</li>
+                </ol>
+            </div>
+
+            <!-- German -->
+            <div id="de" class="instruction-content hidden">
+                <div class="language-title">🇩🇪 Deutsch: Wie funktioniert die Ein- und Ausfahrt?</div>
+                
+                <div class="instruction-title">Ein- und Ausfahrt: Schritt für Schritt</div>
+                <p>Der Prozess ist so konzipiert, dass er für maximale Sicherheit schnell, aber kontrolliert abläuft.</p>
+                
+                <div class="instruction-title">1. Einfahrt (Ankunft)</div>
+                <ol class="step-list">
+                    <li><strong>Ankunft am Tor:</strong> Fahren Sie zum geschlossenen Einfahrtstor oder zur Schranke.</li>
+                    <li><strong>Identifikation:</strong> Kameras scannen das Kennzeichen (LPR), um die gültige Reservierung zu prüfen, ODER geben Sie Ihren Reservierungscode manuell am Terminal ein.</li>
+                    <li><strong>Zugang:</strong> Nach der Validierung gibt das System ein Parkticket aus en öffnet die Schranke.</li>
+                    <li><strong>Parken:</strong> Parken Sie auf dem zugewiesenen oder frei gewählten Platz innerhalb der gesicherten Zone.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Ausfahrt (Abfahrt)</div>
+                <ol class="step-list">
+                    <li><strong>Vorbereitung & Bezahlung:</strong> Gehen Sie zur Zahlstelle (Servicegebäude oder Tor), um die Parkgebühren zu begleichen (EC-/Kreditkarte, Tankkarte).</li>
+                    <li><strong>Validierung:</strong> Na erfolgreicher Zahlung wird Ihr Parkticket voor de Ausfahrt 'freigeschaltet'.</li>
+                    <li><strong>Ausfahrtstor:</strong> Fahren Sie zum Ausgangstor en stecken Sie das validierte Ticket in das Terminal.</li>
+                    <li><strong>Abfahrt:</strong> Die Schranke öffnet sich en Sie können das gesicherte Gelände verlassen.</li>
+                </ol>
+            </div>
+
+            <!-- Russian -->
+            <div id="ru" class="instruction-content hidden">
+                <div class="language-title">🇷🇺 Русский: Как работает Въезд и Выезд?</div>
+                
+                <div class="instruction-title">Въезд и Выезд: Пошаговая Инструкция</div>
+                <p>Процесс разработан таким образом, чтобы быть быстрым, но контролируемым для максимальной безопасности.</p>
+                
+                <div class="instruction-title">1. Въезд (Прибытие)</div>
+                <ol class="step-list">
+                    <li><strong>Прибытие к Воротам:</strong> Подъезжайте к закрытым въездным воротам или шлагбауму.</li>
+                    <li><strong>Идентификация:</strong> Камеры сканируют номерной знак (LPR) для проверки действующей брони, ИЛИ введите код бронирования вручную в терминале.</li>
+                    <li><strong>Доступ:</strong> После проверки система выдает парковочный талон и открывает шлагбаум.</li>
+                    <li><strong>Парковка:</strong> Паркуйтесь на назначенном или свободно выбранном месте в пределах охраняемой зоны.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Выезд (Отправление)</div>
+                <ol class="step-list">
+                    <li><strong>Подготовка и Оплата:</strong> Направьтесь к пункту оплаты (сервисное здание или ворота), чтобы оплатить парковку (картой, топливной картой).</li>
+                    <li><strong>Подтверждение:</strong> После успешной оплаты ваш парковочный талон 'активируется' для выезда.</li>
+                    <li><strong>Выездные Ворота:</strong> Подъезжайте к выездным воротам и вставьте активированный талон в терминал.</li>
+                    <li><strong>Отправление:</strong> Шлагбаум открывается, и вы можете покинуть охраняемую территорию.</li>
+                </ol>
+            </div>
+
+            <!-- Polish -->
+            <div id="pl" class="instruction-content hidden">
+                <div class="language-title">🇵🇱 Polski: Jak działa Wjazd i Wyjazd?</div>
+                
+                <div class="instruction-title">Wjazd i Wyjazd: Krok po Kroku</div>
+                <p>Proces jest zaprojektowany tak, aby przebiegał szybko, ale kontrolowanie, dla maksymalnego bezpieczeństwa.</p>
+                
+                <div class="instruction-title">1. Wjazd (Przyjazd)</div>
+                <ol class="step-list">
+                    <li><strong>Przyjazd do Bramy:</strong> Podjedź do zamkniętej bramy wjazdowej lub szlabanu.</li>
+                    <li><strong>Identyfikacja:</strong> Kamery skanują tablicę rejestracyjną (LPR), aby sprawdzić ważną rezerwację, LUB ręcznie wprowadź swój kod rezerwacji w terminalu.</li>
+                    <li><strong>Dostęp:</strong> Po weryfikacji system wydaje bilet parkingowy en otwiera szlaban.</li>
+                    <li><strong>Parkowanie:</strong> Zaparkuj na wyznaczonym lub dowolnie wybranym miejscu w strefie bezpiecznej.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Wyjazd (Odjazd)</div>
+                <ol class="step-list">
+                    <li><strong>Przygotowanie i Płatność:</strong> Udaj się do punktu płatności (budynek serwisowy lub brama), aby uregulować opłaty za parking (karta, karta paliwowa).</li>
+                    <li><strong>Walidacja:</strong> Po pomyślnej płatności Twój bilet parkingowy zostaje 'zwolniony' do wyjazdu.</li>
+                    <li><strong>Brama Wyjazdowa:</strong> Podjedź do bramy wyjazdowej i włóż zweryfikowany bilet do terminala.</li>
+                    <li><strong>Odjazd:</strong> Szlaban się otwiera, a Ty możesz opuścić teren bezpieczny.</li>
+                </ol>
+            </div>
+
+            <!-- Ukrainian -->
+            <div id="uk" class="instruction-content hidden">
+                <div class="language-title">🇺🇦 Українська: Як працює В'їзд та Виїзд?</div>
+                
+                <div class="instruction-title">В'їзд та Виїзд: Крок за Кроком</div>
+                <p>Процес розроблений таким чином, щоб бути швидким, але контрольованим для максимальної безпеки.</p>
+                
+                <div class="instruction-title">1. В'їзд (Прибуття)</div>
+                <ol class="step-list">
+                    <li><strong>Прибуття до Воріт:</strong> Під'їжджайте до закритих в'їзних воріт або шлагбаума.</li>
+                    <li><strong>Ідентифікація:</strong> Камери сканують номерний знак (LPR) для перевірки дійсного бронювання, АБО введіть свій код бронювання вручну у термінал.</li>
+                    <li><strong>Доступ:</strong> Після перевірки система видає паркувальний талон і відкриває шлагбаум.</li>
+                    <li><strong>Паркування:</strong> Паркуйтеся на призначеному або вільно обраному місці в межах охоронюваної зони.</li>
+                </ol>
+                
+                <div class="instruction-title">2. Виїзд (Відправлення)</div>
+                <ol class="step-list">
+                    <li><strong>Підготовка та Оплата:</strong> Прямуйте до пункту оплати (сервісний будинок або ворота), щоб сплатити вартість паркування (карткою, паливною карткою).</li>
+                    <li><strong>Перевірка:</strong> Після успішної оплати ваш паркувальний талон 'активується' для виїзду.</li>
+                    <li><strong>Виїзні Ворота:</strong> Під'їжджайте до виїзних воріт en вставте перевірений талон у термінал.</li>
+                    <li><strong>Відправлення:</strong> Шлагбаум відкривається, і ви можете покинути охоронювану територію.</li>
+                </ol>
+            </div>
+            
+        </div>
+        
+        <div class="bottom-spacing"></div>
+    </div>
+
+    <script>
+        // Simple and reliable language switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-button');
+            const instructionContents = document.querySelectorAll('.instruction-content');
+            
+            // Show Dutch by default
+            showLanguage('nl');
+            
+            // Add click events to language buttons
+            langButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetLang = this.getAttribute('data-lang');
+                    showLanguage(targetLang);
+                });
+            });
+            
+            function showLanguage(lang) {
+                console.log('Switching to language:', lang);
+                
+                // Hide all instruction contents
+                instructionContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected language
+                const targetContent = document.getElementById(lang);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                    console.log('Showing content for:', lang);
+                } else {
+                    console.log('Content not found for:', lang);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
